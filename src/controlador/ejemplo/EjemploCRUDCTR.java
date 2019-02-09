@@ -3,9 +3,8 @@ package controlador.ejemplo;
 import controlador.estilo.BtnsCTR;
 import controlador.estilo.TblCTR;
 import controlador.vtn.CambioPnlCTR;
-import java.awt.Color;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import vista.VtnPrincipal;
@@ -59,7 +58,7 @@ public class EjemploCRUDCTR {
     }
 
     public void iniciar() {
-        //Pasamos el estilo de la tabla 
+        //Pasamos el estilo de la tabla la que contiene un icono 
         TblCTR.estiloTblConIcono(pnlEjemplo.getTblEjemplo());
 
         //Y le damos animaciones a los botones 
@@ -70,42 +69,21 @@ public class EjemploCRUDCTR {
 
         llenaTblEjemplo();
 
+        //Guardamos el numero de la ultima columna de la tabla
+        //Nos ayudara al momento de hacer un click en la tabla y 
+        //saber si se dio click en la columna que tiene el icono 
         int ultColumna = pnlEjemplo.getTblEjemplo().getColumnCount() - 1;
 
-        pnlEjemplo.getTblEjemplo().addMouseListener(new MouseListener() {
+        pnlEjemplo.getTblEjemplo().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 int columna = pnlEjemplo.getTblEjemplo().columnAtPoint(e.getPoint());
-
+                //Si en la columna que se dio click es igual a la ultima columna
+                //Se muestra mas informacion del usuario por consola
                 if (columna == ultColumna) {
                     int fila = pnlEjemplo.getTblEjemplo().rowAtPoint(e.getPoint());
                     masInformacion(fila);
                 }
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                int columna = pnlEjemplo.getTblEjemplo().columnAtPoint(e.getPoint());
-                int fila = pnlEjemplo.getTblEjemplo().rowAtPoint(e.getPoint());
-                if (ultColumna == columna) {
-
-                }
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
             }
         });
     }
@@ -143,10 +121,10 @@ public class EjemploCRUDCTR {
         if (fila >= 0) {
             System.out.println("-------------------------------");
             System.out.println("Nombre: " + datos.get(fila)[0]);
-            System.out.println("Apellido: "+datos.get(fila)[1]);
-            System.out.println("Direccion: "+datos.get(fila)[2]);
-            System.out.println("Telefono: "+datos.get(fila)[3]);
-            System.out.println("Fecha: "+datos.get(fila)[4]);
+            System.out.println("Apellido: " + datos.get(fila)[1]);
+            System.out.println("Direccion: " + datos.get(fila)[2]);
+            System.out.println("Telefono: " + datos.get(fila)[3]);
+            System.out.println("Fecha: " + datos.get(fila)[4]);
             System.out.println("-------------------------------");
         }
     }

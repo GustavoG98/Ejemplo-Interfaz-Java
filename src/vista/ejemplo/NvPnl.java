@@ -38,7 +38,6 @@ public class NvPnl extends javax.swing.JPanel {
         setBackground(new java.awt.Color(49, 79, 117));
         setMinimumSize(new java.awt.Dimension(600, 35));
         setPreferredSize(new java.awt.Dimension(600, 35));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnEjemplo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnEjemplo.setForeground(new java.awt.Color(204, 204, 204));
@@ -47,7 +46,6 @@ public class NvPnl extends javax.swing.JPanel {
         btnEjemplo.setContentAreaFilled(false);
         btnEjemplo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEjemplo.setFocusPainted(false);
-        add(btnEjemplo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 100, 35));
 
         btnInicio.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnInicio.setForeground(new java.awt.Color(204, 204, 204));
@@ -56,7 +54,21 @@ public class NvPnl extends javax.swing.JPanel {
         btnInicio.setContentAreaFilled(false);
         btnInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnInicio.setFocusPainted(false);
-        add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 35));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnEjemplo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btnEjemplo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
 
