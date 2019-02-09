@@ -74,9 +74,9 @@ public class ProductoImp extends Producto implements ProductoDAO {
 
         String SELECT = " SELECT * FROM productos "
                 + " WHERE "
-                + " codigo = '" + Aguja + "' "
+                + " codigo LIKE '%" + Aguja + "%' "
                 + " OR "
-                + " nombre = '" + Aguja + "' "
+                + " nombre LIKE '%" + Aguja + "%' "
                 + " ORDER BY codigo "
                 + " LIMIT 50 "
                 + " OFFSET 0";

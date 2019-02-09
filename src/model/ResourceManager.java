@@ -18,7 +18,7 @@ public class ResourceManager {
 
     private static final String JDBC_DRIVER = "org.postgresql.Driver";
 
-    private static final String JDBC_URL = "jdbc:postgresql://192.168.1.8:5432/CRUD-Pruebas";
+    private static final String JDBC_URL = "jdbc:postgresql://186.43.204.82:5432/CRUD-Pruebas";
     //private static final String JDBC_URL = "jdbc:postgresql://127.0.0.1:5432/MVC";
     //private static final String JDBC_URL = "jdbc:postgresql://191.100.173.4:5432/MVC";
     private static final String JDBC_USER = "postgres";
