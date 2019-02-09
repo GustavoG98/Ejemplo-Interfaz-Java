@@ -3,6 +3,10 @@ package controlador.ejemplo;
 import controlador.estilo.BtnsCTR;
 import controlador.estilo.TblCTR;
 import controlador.vtn.CambioPnlCTR;
+import java.awt.Color;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import vista.VtnPrincipal;
 import vista.ejemplo.EjemploPnl;
@@ -34,6 +38,9 @@ public class EjemploCRUDCTR {
 
     String FECHAS[] = {"12/10/1997", "05/11/1995", "06/05/1998", "15/12/2000"};
 
+    //Aqui guardare los datos  que se llenan en la tabla 
+    private ArrayList<Object[]> datos;
+
     //Para rellenar la tabla  
     DefaultTableModel mdTblEjemplo;
 
@@ -42,7 +49,7 @@ public class EjemploCRUDCTR {
         String titulo[] = {"Nombre", "Apellido", "Direccion", "Teléfono", "Fecha N", " "};
         String datos[][] = {};
         //mdTblEjemplo = new DefaultTableModel(datos, titulo);
-        mdTblEjemplo = TblCTR.modeloTablaSinEditar(datos, titulo); 
+        mdTblEjemplo = TblCTR.modeloTablaSinEditar(datos, titulo);
         //Pasamos el modelo a la tabla  
         pnlEjemplo.getTblEjemplo().setModel(mdTblEjemplo);
 
@@ -60,33 +67,88 @@ public class EjemploCRUDCTR {
 
         //Animamos a los botones con icono  
         BtnsCTR.hoverBtnIcono(pnlEjemplo.getBtnAnterior(), pnlEjemplo.getBtnAyuda(), pnlEjemplo.getBtnBuscar(), pnlEjemplo.getBtnSiguiente());
-        
+
         llenaTblEjemplo();
+
+        int ultColumna = pnlEjemplo.getTblEjemplo().getColumnCount() - 1;
+
+        pnlEjemplo.getTblEjemplo().addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int columna = pnlEjemplo.getTblEjemplo().columnAtPoint(e.getPoint());
+
+                if (columna == ultColumna) {
+                    int fila = pnlEjemplo.getTblEjemplo().rowAtPoint(e.getPoint());
+                    masInformacion(fila);
+                }
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                int columna = pnlEjemplo.getTblEjemplo().columnAtPoint(e.getPoint());
+                int fila = pnlEjemplo.getTblEjemplo().rowAtPoint(e.getPoint());
+                if (ultColumna == columna) {
+
+                }
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
     }
 
     public void llenaTblEjemplo() {
         //Con esto borramos los datos de la tabla
         mdTblEjemplo.setRowCount(0);
-        
-        int numNom; 
-        int numApe; 
-        int numDir; 
-        int numTel; 
-        int numFec;
-        
-        for (int i = 0; i < 100; i++) {
-            numNom = (int) (Math.random() * NOMBRES.length); 
-            numApe = (int) (Math.random() * APELLIDOS.length); 
-            numDir = (int) (Math.random() * DIRECCIONES.length); 
-            numTel = (int) (Math.random() * TELEFONOS.length); 
-            numFec = (int) (Math.random() * FECHAS.length); 
-            
-            Object valores [] ={NOMBRES[numNom], APELLIDOS[numApe], 
-            DIRECCIONES[numDir], TELEFONOS[numTel], FECHAS[numFec]};
-            
-            mdTblEjemplo.addRow(valores); 
-        }
 
+        //Iniciamos el array  
+        datos = new ArrayList();
+
+        int numNom;
+        int numApe;
+        int numDir;
+        int numTel;
+        int numFec;
+
+        for (int i = 0; i < 100; i++) {
+            numNom = (int) (Math.random() * NOMBRES.length);
+            numApe = (int) (Math.random() * APELLIDOS.length);
+            numDir = (int) (Math.random() * DIRECCIONES.length);
+            numTel = (int) (Math.random() * TELEFONOS.length);
+            numFec = (int) (Math.random() * FECHAS.length);
+
+            Object valores[] = {NOMBRES[numNom], APELLIDOS[numApe],
+                DIRECCIONES[numDir], TELEFONOS[numTel], FECHAS[numFec]};
+
+            datos.add(valores);
+
+            mdTblEjemplo.addRow(valores);
+        }
+    }
+
+    public void masInformacion(int fila) {
+        if (fila >= 0) {
+            System.out.println("-------------------------------");
+            System.out.println("Nombre: " + datos.get(fila)[0]);
+            System.out.println("Apellido: "+datos.get(fila)[1]);
+            System.out.println("Direccion: "+datos.get(fila)[2]);
+            System.out.println("Telefono: "+datos.get(fila)[3]);
+            System.out.println("Fecha: "+datos.get(fila)[4]);
+            System.out.println("-------------------------------");
+        }
     }
 
 }
