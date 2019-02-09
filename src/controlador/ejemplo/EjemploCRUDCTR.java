@@ -39,9 +39,10 @@ public class EjemploCRUDCTR {
 
     public EjemploCRUDCTR(EjemploPnl pnlEjemplo, VtnPrincipal vtnPrin) {
         //Inciamos el modelo de tabla personas 
-        String titulo[] = {"Nombre", "Apellido", "Direccion", "Teléfono", "Fecha N"};
+        String titulo[] = {"Nombre", "Apellido", "Direccion", "Teléfono", "Fecha N", " "};
         String datos[][] = {};
-        mdTblEjemplo = new DefaultTableModel(datos, titulo);
+        //mdTblEjemplo = new DefaultTableModel(datos, titulo);
+        mdTblEjemplo = TblCTR.modeloTablaSinEditar(datos, titulo); 
         //Pasamos el modelo a la tabla  
         pnlEjemplo.getTblEjemplo().setModel(mdTblEjemplo);
 
@@ -52,7 +53,7 @@ public class EjemploCRUDCTR {
 
     public void iniciar() {
         //Pasamos el estilo de la tabla 
-        TblCTR.estiloTbl(pnlEjemplo.getTblEjemplo());
+        TblCTR.estiloTblConIcono(pnlEjemplo.getTblEjemplo());
 
         //Y le damos animaciones a los botones 
         BtnsCTR.hoverBtnFondo(pnlEjemplo.getBtnIngresar(), pnlEjemplo.getBtnEditar(), pnlEjemplo.getBtnEliminar());
