@@ -11,6 +11,11 @@ public class TblCTR {
 
     public static void estiloTbl(JTable tbl) {
         TblEstilo.letrasTbl(tbl);
+        TblEstilo.titutloTbl(tbl);
+    }
+
+    public static void estiloTblSinID(JTable tbl) {
+        TblEstilo.letrasTbl(tbl);
         TblEstilo.ocualtarID(tbl);
         TblEstilo.titutloTbl(tbl);
     }
