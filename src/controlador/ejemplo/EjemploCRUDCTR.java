@@ -26,7 +26,7 @@ public class EjemploCRUDCTR {
         "Lina", "Mercedes", "Cesar", "Aurelio", "Sebastian", "Marcelo", "Antonio",
         "Maria", "Cristina", "Christian", "Daniel"};
     String APELLIDOS[] = {"Anchundia", "Bermeo", "Cajamarca", "Chacon",
-        "Chuquiguanda", "Condo", "Coraiza", "Flores", "Garcia", "Guevara",
+        "Chuquiguanda", "Condo", "Coraizaca", "Flores", "Garcia", "Guevara",
         "Maurad", "Medina", "Novillo", "Orellana", "Pesantez", "Ullauri",
         "Vidal", "Viñanzaca", "Zhungo"};
     String DIRECCIONES[] = {"Totoracocha", "Miraflores", "Mayancela",
