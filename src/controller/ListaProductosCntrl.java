@@ -44,16 +44,13 @@ public class ListaProductosCntrl {
         main.getContainer().add(view);
         main.getContainer().updateUI();
 
-        
         view.getBtnBuscar().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 btnBuscarOnMouseClicked(e);
             }
         });
-        
-        
-        
+
         cargarTabla();
         InitEfectos();
 
@@ -85,9 +82,13 @@ public class ListaProductosCntrl {
     }
 
     private void borrarTabla() {
-        for (int i = 0; i < modelT.getDataVector().size() + 1; i++) {
-            modelT.removeRow(0);
+        if (!modelT.getDataVector().isEmpty()) {
+
+            for (int i = 0; i < modelT.getDataVector().size() + 1; i++) {
+                modelT.removeRow(0);
+            }
         }
+
     }
 
     private void cargarTablaBusqueda(String Aguja) {
@@ -111,7 +112,7 @@ public class ListaProductosCntrl {
     private void btnBuscarOnMouseClicked(MouseEvent E) {
         borrarTabla();
         cargarTablaBusqueda(view.getTxtBuscar().getText());
-        
+
     }
 
 }
