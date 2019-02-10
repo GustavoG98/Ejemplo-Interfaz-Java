@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vista.ejemplo;
+
+import javax.swing.JTextField;
 
 /**
  *
@@ -18,6 +15,39 @@ public class EjemploFrmPnl extends javax.swing.JPanel {
         initComponents();
     }
 
+    public JTextField getTxtApellido() {
+        return txtApellido;
+    }
+
+    public JTextField getTxtCedula() {
+        return txtCedula;
+    }
+
+    public JTextField getTxtCodEstudiante() {
+        return txtCodEstudiante;
+    }
+
+    public JTextField getTxtColegio() {
+        return txtColegio;
+    }
+
+    public JTextField getTxtCorreo() {
+        return txtCorreo;
+    }
+
+    public JTextField getTxtDireccion() {
+        return txtDireccion;
+    }
+
+    public JTextField getTxtNombre() {
+        return txtNombre;
+    }
+
+    public JTextField getTxtTitulo() {
+        return txtTitulo;
+    }
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,19 +57,234 @@ public class EjemploFrmPnl extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jLabel5 = new javax.swing.JLabel();
+        txtApellido = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        txtCorreo = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        txtCedula = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        txtCodEstudiante = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        txtTitulo = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        txtColegio = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        txtBuscar9 = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        txtBuscar10 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        txtBuscar11 = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+        setMinimumSize(new java.awt.Dimension(400, 500));
+        setPreferredSize(new java.awt.Dimension(400, 500));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel5.setText("Apellido:");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 170, 20));
+
+        txtApellido.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        txtApellido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        txtApellido.setMaximumSize(new java.awt.Dimension(330, 30));
+        add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 170, 30));
+
+        txtDireccion.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        txtDireccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        txtDireccion.setMaximumSize(new java.awt.Dimension(330, 30));
+        add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 360, 30));
+
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel6.setText("Campo obligatorio.");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 180, 20));
+
+        txtNombre.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        txtNombre.setMaximumSize(new java.awt.Dimension(330, 30));
+        add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 170, 30));
+
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel7.setText("Direccion:");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, 20));
+
+        jLabel8.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel8.setText("Nombre:");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 170, 20));
+
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel9.setText("Solamente ingrese numeros");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 170, 20));
+
+        jLabel10.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel10.setText("Correo electronico:");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 180, 20));
+
+        txtCorreo.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        txtCorreo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        txtCorreo.setMaximumSize(new java.awt.Dimension(330, 30));
+        add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 360, 30));
+
+        jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel11.setText("Ingrese un correo valido ejemplo@algo.com");
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 380, 20));
+
+        jLabel12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel12.setText("Solo debe ingresar letras.");
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 170, 20));
+
+        jLabel13.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel13.setText("Cedula:");
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 170, 20));
+
+        txtCedula.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        txtCedula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        txtCedula.setMaximumSize(new java.awt.Dimension(330, 30));
+        add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 170, 30));
+
+        jLabel14.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel14.setText("Codigo estudiante:");
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 170, 20));
+
+        txtCodEstudiante.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        txtCodEstudiante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        txtCodEstudiante.setMaximumSize(new java.awt.Dimension(330, 30));
+        add(txtCodEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 170, 30));
+
+        jLabel15.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel15.setText("Solo debe ingresar letras.");
+        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 170, 20));
+
+        jLabel16.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel16.setText("Solo debe ingresar letras.");
+        add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 170, 20));
+
+        jLabel17.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel17.setText("Campo obligatorio.");
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 380, 20));
+
+        txtTitulo.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        txtTitulo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        txtTitulo.setMaximumSize(new java.awt.Dimension(330, 30));
+        add(txtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 360, 30));
+
+        jLabel18.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel18.setText("Titulo:");
+        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 180, 20));
+
+        txtColegio.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        txtColegio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        txtColegio.setMaximumSize(new java.awt.Dimension(330, 30));
+        add(txtColegio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 360, 30));
+
+        jLabel19.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel19.setText("Campo obligatorio.");
+        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 380, 20));
+
+        jLabel20.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel20.setText("Colegio:");
+        add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 180, 20));
+
+        jLabel21.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel21.setText("Campo obligatorio.");
+        add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 620, 380, 20));
+
+        txtBuscar9.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        txtBuscar9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        txtBuscar9.setMaximumSize(new java.awt.Dimension(330, 30));
+        add(txtBuscar9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 590, 360, 30));
+
+        jLabel22.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel22.setText("Titulo:");
+        add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 570, 180, 20));
+
+        jLabel23.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel23.setText("Campo obligatorio.");
+        add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, 380, 20));
+
+        txtBuscar10.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        txtBuscar10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        txtBuscar10.setMaximumSize(new java.awt.Dimension(330, 30));
+        add(txtBuscar10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 360, 30));
+
+        jLabel24.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel24.setText("Colegio:");
+        add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 180, 20));
+
+        jLabel25.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel25.setText("Ingrese un correo valido ejemplo@algo.com");
+        add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 380, 20));
+
+        txtBuscar11.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        txtBuscar11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        txtBuscar11.setMaximumSize(new java.awt.Dimension(330, 30));
+        add(txtBuscar11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 360, 30));
+
+        jLabel26.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel26.setText("Correo electronico:");
+        add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 180, 20));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField txtApellido;
+    private javax.swing.JTextField txtBuscar10;
+    private javax.swing.JTextField txtBuscar11;
+    private javax.swing.JTextField txtBuscar9;
+    private javax.swing.JTextField txtCedula;
+    private javax.swing.JTextField txtCodEstudiante;
+    private javax.swing.JTextField txtColegio;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtDireccion;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtTitulo;
     // End of variables declaration//GEN-END:variables
 }

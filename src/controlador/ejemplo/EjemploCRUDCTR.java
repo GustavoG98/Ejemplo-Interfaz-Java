@@ -7,7 +7,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
+import vista.VtnFormulario;
 import vista.VtnPrincipal;
+import vista.ejemplo.EjemploFrmPnl;
 import vista.ejemplo.EjemploPnl;
 
 /**
@@ -86,6 +88,8 @@ public class EjemploCRUDCTR {
                 }
             }
         });
+        
+        pnlEjemplo.getBtnIngresar().addActionListener(e -> clickIngresar()); 
     }
 
     public void llenaTblEjemplo() {
@@ -115,6 +119,9 @@ public class EjemploCRUDCTR {
 
             mdTblEjemplo.addRow(valores);
         }
+        
+        pnlEjemplo.getLblNumResultados().setText(datos.size()+" resultados obtendios.");
+        
     }
 
     public void masInformacion(int fila) {
@@ -128,5 +135,12 @@ public class EjemploCRUDCTR {
             System.out.println("-------------------------------");
         }
     }
-
+    
+    public void clickIngresar(){
+        VtnFormulario vtnFrm = new VtnFormulario(); 
+        EjemploFrmPnl pnlFrm = new EjemploFrmPnl(); 
+        
+        IngresarCTR ingCtr = new IngresarCTR(vtnFrm, pnlFrm); 
+        ingCtr.iniciar();
+    }
 }

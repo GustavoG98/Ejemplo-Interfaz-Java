@@ -18,7 +18,7 @@ public class TxtFocus implements FocusListener{
     
     @Override
     public void focusGained(FocusEvent e) {
-        txt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 66, 86)));
+        txt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(235, 192, 36), 2));
     }
 
     @Override
