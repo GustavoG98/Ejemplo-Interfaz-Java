@@ -5,6 +5,10 @@
  */
 package controller;
 
+import Controllers.Libraries.Effects;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import model.interfaces.ProductoImp;
@@ -27,20 +31,28 @@ public class MainController {
 
     //Inits
     public void Init() {
+        view.setLocationRelativeTo(null);
         view.setVisible(true);
 
-        view.getBtnProductos().addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                btnProductosOnMouseClicked(e);
-            }
-        });
-
+        view.getBtnProductos().addActionListener(e -> btnProductosOnMouseClicked(e));
+        InitEffectos();
+    }
+    
+    private void InitEffectos(){
+        
+        Font entrada = new Font("Tahoma", 1, 15);
+        Font salida = view.getBtnProductos().getFont();
+        
+        
+        
+        Effects.letterHover(view.getBtnProductos(), entrada, salida);
+        Effects.letterHover(view.getBtnCategorias(), entrada, salida);
+        
     }
 
     //Metodos de Apoyo
     //Procesadores de Eventos
-    private void btnProductosOnMouseClicked(MouseEvent e) {
+    private void btnProductosOnMouseClicked(ActionEvent e) {
         ListaProducto lista = new ListaProducto();
 
         ListaProductosCntrl producto = new ListaProductosCntrl(view, lista, model);

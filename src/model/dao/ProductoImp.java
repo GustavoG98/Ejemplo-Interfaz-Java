@@ -47,9 +47,9 @@ public class ProductoImp extends Producto implements ProductoDAO {
     }
 
     @Override
-    public List<Producto> SelectAll() {
+    public List<Producto> SelectAll(int puntero) {
 
-        String SELECT = "SELECT * FROM productos ORDER BY codigo LIMIT 50 OFFSET 0";
+        String SELECT = "SELECT * FROM productos ORDER BY codigo LIMIT 50 OFFSET " + puntero;
 
         List<Producto> Lista = new ArrayList<>();
 
@@ -102,15 +102,48 @@ public class ProductoImp extends Producto implements ProductoDAO {
     }
 
     @Override
+    public int SelectCount() {
+        String SELECT = "SELECT count(*) AS registros FROM productos";
+        
+        int registros = 0;
+        
+        try {
+            
+            ResultSet rs = ResourceManager.Query(SELECT);
+            while (rs.next()) {
+                
+                registros = rs.getInt("registros");
+            }
+            
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        
+        if (registros > 50){
+            
+            if (registros % 50 == 0){
+                registros = registros/50;
+            } else {
+                registros = (registros/50)+1;
+            }
+            
+        } else {
+            registros = 1;
+        }
+        
+        return registros;
+    }
+
+    @Override
     public boolean editar(String Pk) {
         String foto;
-        
-        if (getFoto() == null){
+
+        if (getFoto() == null) {
             foto = null;
         } else {
             foto = ImgLib.setImageInBase64(getFoto());
         }
-        
+
         String UPDATE = "UPDATE productos SET "
                 + " codigo = '" + getCodigo() + "', "
                 + " nombre = '" + getNombre() + "', "
@@ -147,9 +180,16 @@ public class ProductoImp extends Producto implements ProductoDAO {
             producto.setDescripcion(rs.getString("descripcion"));
 
             bytefoto = rs.getBytes("foto");
-
+            
+            
+            
             if (bytefoto != null) {
-                producto.setFoto(ImgLib.ByteToImage(bytefoto));
+                if (bytefoto.length > 4){
+                    producto.setFoto(ImgLib.ByteToImage(bytefoto));
+                } else {
+                    producto.setFoto(null);
+                }
+
             } else {
                 producto.setFoto(null);
             }
@@ -161,5 +201,26 @@ public class ProductoImp extends Producto implements ProductoDAO {
         }
         return producto;
     }
-
+    
+    
+    public static void main(String[] args) {
+        
+        for (int i = 2; i < 60; i++) {
+            
+            
+            if (i % 2 == 0){
+                ProductoImp prod = new ProductoImp("PRO-000"+i, "carne ---"+i, "carne", null, (float) (5.50+i), i*10);
+                prod.insertar();
+            } else {
+                
+                ProductoImp prod = new ProductoImp("PRO-000"+i, "leche ---"+i, "carne", null, (float) (5.50+i), i*10);
+                prod.insertar();
+            }
+            
+        }
+        
+        
+    }
+    
+    
 }

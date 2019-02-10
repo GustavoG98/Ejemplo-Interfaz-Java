@@ -16,9 +16,11 @@ public interface ProductoDAO {
 
     public boolean insertar();
 
-    public List<Producto> SelectAll();
+    public List<Producto> SelectAll(int puntero);
 
     public List<Producto> SelectOne(String Aguja);
+    
+    public int SelectCount();
 
     public boolean editar(String Pk);
 

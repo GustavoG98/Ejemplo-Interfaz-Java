@@ -53,20 +53,20 @@ public class Main extends javax.swing.JFrame {
         navbar.setLayout(new javax.swing.BoxLayout(navbar, javax.swing.BoxLayout.LINE_AXIS));
 
         btnCategorias.setBackground(new java.awt.Color(0, 102, 102));
-        btnCategorias.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        btnCategorias.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnCategorias.setForeground(new java.awt.Color(255, 255, 255));
         btnCategorias.setText("Categorias");
         btnCategorias.setBorderPainted(false);
         btnCategorias.setContentAreaFilled(false);
         btnCategorias.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCategorias.setFocusPainted(false);
-        btnCategorias.setMaximumSize(new java.awt.Dimension(120, 30));
-        btnCategorias.setMinimumSize(new java.awt.Dimension(120, 30));
-        btnCategorias.setPreferredSize(new java.awt.Dimension(120, 30));
+        btnCategorias.setMaximumSize(new java.awt.Dimension(130, 30));
+        btnCategorias.setMinimumSize(new java.awt.Dimension(130, 30));
+        btnCategorias.setPreferredSize(new java.awt.Dimension(130, 30));
         navbar.add(btnCategorias);
         btnCategorias.getAccessibleContext().setAccessibleName("btnLista");
 
-        btnProductos.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        btnProductos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnProductos.setForeground(new java.awt.Color(255, 255, 255));
         btnProductos.setText("Productos");
         btnProductos.setBorder(null);
@@ -74,9 +74,9 @@ public class Main extends javax.swing.JFrame {
         btnProductos.setContentAreaFilled(false);
         btnProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnProductos.setFocusPainted(false);
-        btnProductos.setMaximumSize(new java.awt.Dimension(120, 30));
-        btnProductos.setMinimumSize(new java.awt.Dimension(120, 30));
-        btnProductos.setPreferredSize(new java.awt.Dimension(120, 30));
+        btnProductos.setMaximumSize(new java.awt.Dimension(130, 30));
+        btnProductos.setMinimumSize(new java.awt.Dimension(130, 30));
+        btnProductos.setPreferredSize(new java.awt.Dimension(130, 30));
         navbar.add(btnProductos);
         btnProductos.getAccessibleContext().setAccessibleName("btnAgregar");
 

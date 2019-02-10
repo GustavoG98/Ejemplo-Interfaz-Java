@@ -7,8 +7,8 @@ package controller;
 
 import Controllers.Libraries.Effects;
 import java.awt.Color;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import model.dto.Producto;
@@ -29,13 +29,18 @@ public class ListaProductosCntrl {
     private List<Producto> Lista = null;
     private DefaultTableModel modelT;
 
+    private int paginaActual = 0;
+    private int paginas = 0;
+
     public ListaProductosCntrl(Main main, ListaProducto view, ProductoImp model) {
         this.main = main;
         this.view = view;
         this.model = model;
     }
 
-    //Inits
+    /*
+        Inits
+     */
     public void Init() {
 
         modelT = (DefaultTableModel) view.getTabProductos().getModel();
@@ -44,17 +49,23 @@ public class ListaProductosCntrl {
         main.getContainer().add(view);
         main.getContainer().updateUI();
 
-        view.getBtnBuscar().addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                btnBuscarOnMouseClicked(e);
-            }
-        });
+        setPaginas();
 
         cargarTabla();
+        InitEventos();
         InitEfectos();
 
         view.setVisible(true);
+
+    }
+
+    private void InitEventos() {
+        view.getBtnBuscar().addActionListener(e -> btnBuscarActionPerformance(e));
+
+        view.getBtnSiguiente().addActionListener(e -> btnSiguienteActionPerformance(e));
+
+        view.getBtnAnterior().addActionListener(e -> btnAnterioActionPerformace(e));
+
     }
 
     private void InitEfectos() {
@@ -66,14 +77,15 @@ public class ListaProductosCntrl {
         Effects.colorHover(view.getBtnEditar(), colorEntrada, colorSalida);
         Effects.colorHover(view.getBtnEliminar(), colorEntrada, colorSalida);
         Effects.colorHover(view.getLbEstado(), colorEntrada, colorSalida);
-
-        Effects.moveableFrame(view);
-
+        
     }
 
-    //Metodos de Apoyo
+    /*
+        Metodos de Apoyo
+     */
     private void cargarTabla() {
-        Lista = model.SelectAll();
+
+        Lista = model.SelectAll(paginaActual * 50);
 
         Lista.forEach((obj) -> {
             agregarFila(obj);
@@ -83,7 +95,6 @@ public class ListaProductosCntrl {
 
     private void borrarTabla() {
         if (!modelT.getDataVector().isEmpty()) {
-
             for (int i = 0; i < modelT.getDataVector().size() + 1; i++) {
                 modelT.removeRow(0);
             }
@@ -108,10 +119,43 @@ public class ListaProductosCntrl {
         });
     }
 
-    //Procesadores de Eventos
-    private void btnBuscarOnMouseClicked(MouseEvent E) {
+    private void setPaginas() {
+        paginas = model.SelectCount();
+        view.getLbPaginas().setText(paginaActual + 1 + "/" + paginas);
+    }
+
+    /*
+    Procesadores de Eventos
+     */
+    private void btnBuscarActionPerformance(ActionEvent e) {
         borrarTabla();
         cargarTablaBusqueda(view.getTxtBuscar().getText());
+
+    }
+
+    private void btnSiguienteActionPerformance(ActionEvent e) {
+
+        if ((paginaActual + 1) < paginas) {
+            if (paginas > 1) {
+                paginaActual++;
+                borrarTabla();
+                cargarTabla();
+                setPaginas();
+            }
+        }
+
+    }
+
+    private void btnAnterioActionPerformace(ActionEvent e) {
+
+        if (paginas > 1) {
+            if (paginaActual != 0) {
+                paginaActual--;
+                borrarTabla();
+                cargarTabla();
+                setPaginas();
+            }
+        }
 
     }
 

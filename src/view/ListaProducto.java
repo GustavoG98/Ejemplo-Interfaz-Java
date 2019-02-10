@@ -34,6 +34,9 @@ public class ListaProducto extends javax.swing.JPanel {
         btnEliminar = new javax.swing.JButton();
         lbResultados = new javax.swing.JLabel();
         lbEstado = new javax.swing.JLabel();
+        btnAnterior = new javax.swing.JButton();
+        lbPaginas = new javax.swing.JLabel();
+        btnSiguiente = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 204));
         setMinimumSize(new java.awt.Dimension(800, 460));
@@ -55,6 +58,7 @@ public class ListaProducto extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tabProductos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         tabProductos.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tabProductos);
 
@@ -149,6 +153,36 @@ public class ListaProducto extends javax.swing.JPanel {
         lbEstado.setOpaque(true);
         lbEstado.setPreferredSize(new java.awt.Dimension(800, 30));
 
+        btnAnterior.setBackground(new java.awt.Color(204, 204, 204));
+        btnAnterior.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        btnAnterior.setForeground(new java.awt.Color(102, 102, 102));
+        btnAnterior.setText("<");
+        btnAnterior.setBorder(null);
+        btnAnterior.setContentAreaFilled(false);
+        btnAnterior.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAnterior.setFocusPainted(false);
+        btnAnterior.setMaximumSize(new java.awt.Dimension(30, 30));
+        btnAnterior.setMinimumSize(new java.awt.Dimension(30, 30));
+        btnAnterior.setOpaque(true);
+        btnAnterior.setPreferredSize(new java.awt.Dimension(30, 30));
+
+        lbPaginas.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        lbPaginas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbPaginas.setText("1/50");
+
+        btnSiguiente.setBackground(new java.awt.Color(204, 204, 204));
+        btnSiguiente.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        btnSiguiente.setForeground(new java.awt.Color(102, 102, 102));
+        btnSiguiente.setText(">");
+        btnSiguiente.setBorder(null);
+        btnSiguiente.setContentAreaFilled(false);
+        btnSiguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSiguiente.setFocusPainted(false);
+        btnSiguiente.setMaximumSize(new java.awt.Dimension(30, 30));
+        btnSiguiente.setMinimumSize(new java.awt.Dimension(30, 30));
+        btnSiguiente.setOpaque(true);
+        btnSiguiente.setPreferredSize(new java.awt.Dimension(30, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -171,7 +205,12 @@ public class ListaProducto extends javax.swing.JPanel {
                         .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lbResultados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(lbPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addComponent(lbEstado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -188,10 +227,14 @@ public class ListaProducto extends javax.swing.JPanel {
                         .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbResultados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -227,18 +270,33 @@ public class ListaProducto extends javax.swing.JPanel {
     public JTextField getTxtBuscar() {
         return txtBuscar;
     }
+
+    public JButton getBtnAnterior() {
+        return btnAnterior;
+    }
+
+    public JButton getBtnSiguiente() {
+        return btnSiguiente;
+    }
+
+    public JLabel getLbPaginas() {
+        return lbPaginas;
+    }
     
     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnAnterior;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnSiguiente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbEstado;
+    private javax.swing.JLabel lbPaginas;
     private javax.swing.JLabel lbResultados;
     private javax.swing.JTable tabProductos;
     private javax.swing.JTextField txtBuscar;

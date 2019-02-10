@@ -1,6 +1,7 @@
 package Controllers.Libraries;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -37,19 +38,19 @@ public class Effects {
 
     }
 
-    public static void letterHover(JComponent button, Color colorEnter, Color colorExit) {
+    public static void letterHover(JComponent button, Font enterFont, Font exitFont) {
         button.addMouseListener(new MouseAdapter() {
 
             @Override
             public void mouseEntered(MouseEvent e) {
-                button.setForeground(new Color(255, 255, 255));
-                button.setFont(new java.awt.Font("Arial", 1, 16));
+                button.setForeground(button.getForeground());
+                button.setFont(enterFont);
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-                button.setForeground(new Color(204, 204, 204));
-                button.setFont(new java.awt.Font("Arial", 1, 14));
+                button.setForeground(button.getForeground());
+                button.setFont(exitFont);
             }
 
         });
