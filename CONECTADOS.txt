@@ -1,4 +1,8 @@
 Johnny conectado y listo para trabajar!!! 
 Diego listo para el proyecto!! :v
 Andrés conectado... y listo para trabajar!!
+<<<<<<< HEAD
 buenas buenas a vender.........!!!!!
+=======
+Lina conectada y lista para el proyecto !!..^_^
+>>>>>>> 93c2041fb82187e4d385a36f30fe6c9eb2ffcd44
