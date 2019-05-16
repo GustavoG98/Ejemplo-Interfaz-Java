@@ -43,17 +43,19 @@ public class EjemploCRUDCTR {
     private ArrayList<Object[]> datos;
 
     //Para rellenar la tabla  
-    DefaultTableModel mdTblEjemplo;
+    private final DefaultTableModel mdTblEjemplo;
+    //
+    private final VtnPrincipal vtnPrin;
 
     public EjemploCRUDCTR(EjemploPnl pnlEjemplo, VtnPrincipal vtnPrin) {
         //Inciamos el modelo de tabla personas 
         String titulo[] = {"Nombre", "Apellido", "Direccion", "Teléfono", "Fecha N", " "};
-        String datos[][] = {};
+        String d[][] = {};
         //mdTblEjemplo = new DefaultTableModel(datos, titulo);
-        mdTblEjemplo = TblCTR.modeloTablaSinEditar(datos, titulo);
+        mdTblEjemplo = TblCTR.modeloTablaSinEditar(d, titulo);
         //Pasamos el modelo a la tabla  
         pnlEjemplo.getTblEjemplo().setModel(mdTblEjemplo);
-
+        this.vtnPrin = vtnPrin;
         this.pnlEjemplo = pnlEjemplo;
         //Repinto el panel por su panel correspondiente
         CambioPnlCTR.cambioPnl(vtnPrin.getPnlPrincipal(), pnlEjemplo);
@@ -88,8 +90,8 @@ public class EjemploCRUDCTR {
                 }
             }
         });
-        
-        pnlEjemplo.getBtnIngresar().addActionListener(e -> clickIngresar()); 
+
+        pnlEjemplo.getBtnIngresar().addActionListener(e -> clickIngresar());
     }
 
     public void llenaTblEjemplo() {
@@ -119,9 +121,9 @@ public class EjemploCRUDCTR {
 
             mdTblEjemplo.addRow(valores);
         }
-        
-        pnlEjemplo.getLblNumResultados().setText(datos.size()+" resultados obtendios.");
-        
+
+        pnlEjemplo.getLblNumResultados().setText(datos.size() + " resultados obtendios.");
+
     }
 
     public void masInformacion(int fila) {
@@ -135,12 +137,12 @@ public class EjemploCRUDCTR {
             System.out.println("-------------------------------");
         }
     }
-    
-    public void clickIngresar(){
-        VtnFormulario vtnFrm = new VtnFormulario(); 
-        EjemploFrmPnl pnlFrm = new EjemploFrmPnl(); 
-        
-        IngresarCTR ingCtr = new IngresarCTR(vtnFrm, pnlFrm); 
+
+    public void clickIngresar() {
+        VtnFormulario vtnFrm = new VtnFormulario(vtnPrin, true);
+        EjemploFrmPnl pnlFrm = new EjemploFrmPnl();
+
+        IngresarCTR ingCtr = new IngresarCTR(vtnFrm, pnlFrm);
         ingCtr.iniciar();
     }
 }
