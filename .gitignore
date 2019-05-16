@@ -1,0 +1,10 @@
+/build/
+/nbproject/private/
+#Proyecto ejecutable
+/dist
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
