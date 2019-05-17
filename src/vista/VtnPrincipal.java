@@ -39,7 +39,7 @@ public class VtnPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 500));
 
-        pnlPerfil.setBackground(new java.awt.Color(0, 24, 56));
+        pnlPerfil.setBackground(new java.awt.Color(0, 51, 102));
 
         javax.swing.GroupLayout pnlPerfilLayout = new javax.swing.GroupLayout(pnlPerfil);
         pnlPerfil.setLayout(pnlPerfilLayout);
