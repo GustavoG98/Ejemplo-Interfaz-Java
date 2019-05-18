@@ -1,6 +1,8 @@
 package controlador;
 
 import controlador.ejemplo.EjemploCTR;
+import java.io.File;
+import modelo.Constantes;
 import vista.BienvenidaPnl;
 import vista.VtnPrincipal;
 import vista.ejemplo.NvPnl;
@@ -13,13 +15,19 @@ public class run {
 
     public static void main(String[] args) {
         estiloWindows();
-        
-        VtnPrincipal vtnPrin = new VtnPrincipal(); 
-        BienvenidaPnl pnlBienvenida = new BienvenidaPnl();
-        NvPnl pnlNv = new NvPnl(); 
-        
-        EjemploCTR ejem = new EjemploCTR(pnlBienvenida, vtnPrin, pnlNv); 
-        ejem.iniciar();
+
+        File pv = new File("Ditool.jar");
+        if (pv.exists()) {
+            Constantes.ejecutarJAR("Ditool");
+        } else {
+            System.out.println("No tenemos el versionador instalado.");
+            VtnPrincipal vtnPrin = new VtnPrincipal();
+            BienvenidaPnl pnlBienvenida = new BienvenidaPnl();
+            NvPnl pnlNv = new NvPnl();
+
+            EjemploCTR ejem = new EjemploCTR(pnlBienvenida, vtnPrin, pnlNv);
+            ejem.iniciar();
+        }
     }
 
     public static void estiloWindows() {
@@ -30,14 +38,8 @@ public class run {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VtnPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VtnPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VtnPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VtnPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            System.out.println("No tiene instalado windows: " + ex.getMessage());
         }
     }
 }

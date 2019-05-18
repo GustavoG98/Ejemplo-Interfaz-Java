@@ -55,6 +55,7 @@ public class VtnFormulario extends javax.swing.JDialog {
         pnlFormulario = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Formulario de ejemplo");
         setMaximumSize(new java.awt.Dimension(400, 600));
         setMinimumSize(new java.awt.Dimension(400, 400));
 

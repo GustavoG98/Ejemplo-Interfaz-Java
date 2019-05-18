@@ -37,6 +37,7 @@ public class VtnPrincipal extends javax.swing.JFrame {
         pnlPrincipal = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ejemplo Interfaz");
         setMinimumSize(new java.awt.Dimension(800, 500));
 
         pnlPerfil.setBackground(new java.awt.Color(0, 51, 102));

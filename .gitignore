@@ -10,3 +10,15 @@
 # Log file
 *.log
 *.zip
+
+# Archvios .jar descargados para pruebas
+*.jar
+
+# Librerias de los archivos .jar necesarias
+/lib/
+
+# Readme de los jar descargados
+README.TXT
+
+#Todos los .propesties
+*.properties
