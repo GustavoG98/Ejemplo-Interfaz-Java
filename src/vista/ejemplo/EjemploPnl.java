@@ -103,10 +103,10 @@ public class EjemploPnl extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblEjemplo = new javax.swing.JTable();
 
-        setBackground(new java.awt.Color(204, 204, 204));
+        setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(800, 465));
 
-        lblMensaje.setBackground(new java.awt.Color(49, 79, 117));
+        lblMensaje.setBackground(new java.awt.Color(102, 102, 102));
         lblMensaje.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblMensaje.setForeground(new java.awt.Color(255, 255, 255));
         lblMensaje.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -134,7 +134,7 @@ public class EjemploPnl extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel5.setText("Buscar:");
 
-        btnIngresar.setBackground(new java.awt.Color(49, 79, 117));
+        btnIngresar.setBackground(new java.awt.Color(0, 102, 153));
         btnIngresar.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         btnIngresar.setForeground(new java.awt.Color(255, 255, 255));
         btnIngresar.setText("Ingresar");
@@ -148,7 +148,7 @@ public class EjemploPnl extends javax.swing.JPanel {
         btnIngresar.setOpaque(true);
         btnIngresar.setPreferredSize(new java.awt.Dimension(90, 30));
 
-        btnEditar.setBackground(new java.awt.Color(49, 79, 117));
+        btnEditar.setBackground(new java.awt.Color(0, 102, 153));
         btnEditar.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         btnEditar.setForeground(new java.awt.Color(255, 255, 255));
         btnEditar.setText("Editar");
@@ -162,7 +162,6 @@ public class EjemploPnl extends javax.swing.JPanel {
         btnEditar.setOpaque(true);
         btnEditar.setPreferredSize(new java.awt.Dimension(90, 30));
 
-        txtBuscar.setBackground(new java.awt.Color(204, 204, 204));
         txtBuscar.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         txtBuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(153, 153, 153)));
         txtBuscar.setMaximumSize(new java.awt.Dimension(330, 30));
@@ -171,15 +170,15 @@ public class EjemploPnl extends javax.swing.JPanel {
         jLabel6.setText("Ordenar por:");
 
         cbFiltrar.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        cbFiltrar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre", "Fecha" }));
+        cbFiltrar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fecha", "Nombre" }));
         cbFiltrar.setMinimumSize(new java.awt.Dimension(200, 30));
         cbFiltrar.setPreferredSize(new java.awt.Dimension(200, 30));
 
         lblPosicionRegistros.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         lblPosicionRegistros.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPosicionRegistros.setText("10/30");
+        lblPosicionRegistros.setText("1/30");
 
-        btnEliminar.setBackground(new java.awt.Color(49, 79, 117));
+        btnEliminar.setBackground(new java.awt.Color(0, 102, 153));
         btnEliminar.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar.setText("Eliminar");
@@ -203,7 +202,6 @@ public class EjemploPnl extends javax.swing.JPanel {
         btnAnterior.setFocusPainted(false);
         btnAnterior.setMaximumSize(new java.awt.Dimension(30, 30));
         btnAnterior.setMinimumSize(new java.awt.Dimension(30, 30));
-        btnAnterior.setOpaque(true);
         btnAnterior.setPreferredSize(new java.awt.Dimension(30, 30));
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
@@ -232,11 +230,10 @@ public class EjemploPnl extends javax.swing.JPanel {
         btnSiguiente.setFocusPainted(false);
         btnSiguiente.setMaximumSize(new java.awt.Dimension(30, 30));
         btnSiguiente.setMinimumSize(new java.awt.Dimension(30, 30));
-        btnSiguiente.setOpaque(true);
         btnSiguiente.setPreferredSize(new java.awt.Dimension(30, 30));
 
         lblNumResultados.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        lblNumResultados.setText("50 Resultados encontrados.");
+        lblNumResultados.setText("25 Resultados encontrados.");
 
         tblEjemplo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

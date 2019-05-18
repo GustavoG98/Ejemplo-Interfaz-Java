@@ -40,7 +40,7 @@ public class VtnPrincipal extends javax.swing.JFrame {
         setTitle("Ejemplo Interfaz");
         setMinimumSize(new java.awt.Dimension(800, 500));
 
-        pnlPerfil.setBackground(new java.awt.Color(0, 51, 102));
+        pnlPerfil.setBackground(new java.awt.Color(102, 102, 102));
 
         javax.swing.GroupLayout pnlPerfilLayout = new javax.swing.GroupLayout(pnlPerfil);
         pnlPerfil.setLayout(pnlPerfilLayout);
@@ -53,7 +53,7 @@ public class VtnPrincipal extends javax.swing.JFrame {
             .addGap(0, 35, Short.MAX_VALUE)
         );
 
-        pnlMenu.setBackground(new java.awt.Color(49, 79, 117));
+        pnlMenu.setBackground(new java.awt.Color(0, 102, 153));
         pnlMenu.setLayout(new java.awt.CardLayout());
 
         pnlPrincipal.setBackground(new java.awt.Color(217, 217, 217));

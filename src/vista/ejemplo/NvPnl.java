@@ -35,7 +35,7 @@ public class NvPnl extends javax.swing.JPanel {
         btnEjemplo = new javax.swing.JButton();
         btnInicio = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(49, 79, 117));
+        setBackground(new java.awt.Color(0, 0, 0));
         setMinimumSize(new java.awt.Dimension(600, 35));
         setPreferredSize(new java.awt.Dimension(600, 35));
 

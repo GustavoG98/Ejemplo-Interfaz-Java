@@ -120,7 +120,7 @@ public class VtnFormulario extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pnlHeader.setBackground(new java.awt.Color(49, 79, 117));
+        pnlHeader.setBackground(new java.awt.Color(0, 102, 153));
 
         lblTituloVtnFrm.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         lblTituloVtnFrm.setForeground(new java.awt.Color(255, 255, 255));

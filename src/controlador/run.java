@@ -1,11 +1,9 @@
 package controlador;
 
-import controlador.ejemplo.EjemploCTR;
-import java.io.File;
-import modelo.Constantes;
-import vista.BienvenidaPnl;
-import vista.VtnPrincipal;
-import vista.ejemplo.NvPnl;
+import javax.swing.JOptionPane;
+import modelo.DitoolBD;
+import modelo.Version;
+import vista.VtnDitool;
 
 /**
  *
@@ -16,18 +14,20 @@ public class run {
     public static void main(String[] args) {
         estiloWindows();
 
-        File pv = new File("Ditool.jar");
-        if (pv.exists()) {
-            Constantes.ejecutarJAR("Ditool");
-        } else {
-            System.out.println("No tenemos el versionador instalado.");
-            VtnPrincipal vtnPrin = new VtnPrincipal();
-            BienvenidaPnl pnlBienvenida = new BienvenidaPnl();
-            NvPnl pnlNv = new NvPnl();
+        VtnDitool vtnDitool = new VtnDitool();
+        vtnDitool.setTitle("Ditool | Version instalada: ");
+        DitoolBD conecta = new DitoolBD("VERSION", "AZUL");
 
-            EjemploCTR ejem = new EjemploCTR(pnlBienvenida, vtnPrin, pnlNv);
-            ejem.iniciar();
+        Version v = conecta.consultarUltimaVersion();
+
+        if (v != null) {
+            VtnDitoolCTR ctrVtn = new VtnDitoolCTR(v, vtnDitool);
+            ctrVtn.iniciar();
+        } else {
+            JOptionPane.showMessageDialog(vtnDitool, "Posiblemente no tengamos acceso a internet. \n"
+                    + "Verifique su conexion e intentelo de nuevo.");
         }
+
     }
 
     public static void estiloWindows() {
